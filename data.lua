@@ -26,7 +26,7 @@ shadowHeight = 22
 
 constructionBot = false
 name = "logistic-robot"
-if settings.startup["logistic-bot-construction-bot-companion-cube"].value then
+if settings.startup["logistic-cube-construction-bot"].value then
   name = "construction-robot"
   constructionBot = true
 end
