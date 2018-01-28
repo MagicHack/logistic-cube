@@ -1,8 +1,8 @@
 {
     "name": "logistic-cube",
     "version": "0.0.1",
-    "title": "Bot companion cube",
+    "title": "Logistic cube",
     "author": "MagicHack",
-    "description": "replace bots with companion cubes",
+    "description": "Replace bots with companion cubes",
     "factorio_version": "0.16"
 }
