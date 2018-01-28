@@ -1,6 +1,6 @@
 -- Ugly mess of replacing every data.raw value (I never modded a game before and this is my first time with lua)
 -- TODO : make it cleaner (like Waitex_Full)
--- TODO : Setting to toggle
+--TODO : Setting to toggle
 -- Maybe make different sprites for cargo and no cargo like base game...
 -- Used 3d model from https://free3d.com/3d-model/companion-cubes-portal-8274.html to generate images in blender
 
@@ -31,120 +31,137 @@ if settings.startup["logistic-cube-construction-bot"].value then
   constructionBot = true
 end
 
+robot = data.raw[name][name]
+
 -- Icon
 
-data.raw[name][name].icon = iconPath
+robot.icon = iconPath
+-- ??
 data.raw.item[name].icon = iconPath
-
 -- Idle
-data.raw[name][name].idle.filename = texturePath
-data.raw[name][name].idle.line_length = textureLineLength
-data.raw[name][name].idle.width = textureWidth
-data.raw[name][name].idle.height = textureHeight
-data.raw[name][name].idle.y = 0
+robotCurrent = robot.idle
+
+robotCurrent.filename = texturePath
+robotCurrent.line_length = textureLineLength
+robotCurrent.width = textureWidth
+robotCurrent.height = textureHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].idle.hr_version.filename = texturePathHighRes
-data.raw[name][name].idle.hr_version.line_length = textureLineLength
-data.raw[name][name].idle.hr_version.width = textureWidthHighRes
-data.raw[name][name].idle.hr_version.height = textureHeightHighRes
-data.raw[name][name].idle.hr_version.y = 0
+robotCurrent.hr_version.filename = texturePathHighRes
+robotCurrent.hr_version.line_length = textureLineLength
+robotCurrent.hr_version.width = textureWidthHighRes
+robotCurrent.hr_version.height = textureHeightHighRes
+robotCurrent.hr_version.y = 0
 
 -- Idle with cargo
 if not constructionBot then
-data.raw[name][name].idle_with_cargo.filename = texturePath
-data.raw[name][name].idle_with_cargo.line_length = textureLineLength
-data.raw[name][name].idle_with_cargo.width = textureWidth
-data.raw[name][name].idle_with_cargo.height = textureHeight
-data.raw[name][name].idle_with_cargo.y = 0
+robotCurrent = robot.idle_with_cargo
+
+robotCurrent.filename = texturePath
+robotCurrent.line_length = textureLineLength
+robotCurrent.width = textureWidth
+robotCurrent.height = textureHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].idle_with_cargo.hr_version.filename = texturePathHighRes
-data.raw[name][name].idle_with_cargo.hr_version.line_length = textureLineLength
-data.raw[name][name].idle_with_cargo.hr_version.width = textureWidthHighRes
-data.raw[name][name].idle_with_cargo.hr_version.height = textureHeightHighRes
-data.raw[name][name].idle_with_cargo.hr_version.y = 0
+robotCurrent.hr_version.filename = texturePathHighRes
+robotCurrent.hr_version.line_length = textureLineLength
+robotCurrent.hr_version.width = textureWidthHighRes
+robotCurrent.hr_version.height = textureHeightHighRes
+robotCurrent.hr_version.y = 0
 end
 -- In motion
 
-data.raw[name][name].in_motion.filename = texturePath
-data.raw[name][name].in_motion.line_length = textureLineLength
-data.raw[name][name].in_motion.width = textureWidth
-data.raw[name][name].in_motion.height = textureHeight
-data.raw[name][name].in_motion.y = 0
+
+robotCurrent = robot.in_motion
+
+robotCurrent.filename = texturePath
+robotCurrent.line_length = textureLineLength
+robotCurrent.width = textureWidth
+robotCurrent.height = textureHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].in_motion.hr_version.filename = texturePathHighRes
-data.raw[name][name].in_motion.hr_version.line_length = textureLineLength
-data.raw[name][name].in_motion.hr_version.width = textureWidthHighRes
-data.raw[name][name].in_motion.hr_version.height = textureHeightHighRes
-data.raw[name][name].in_motion.hr_version.y = 0
+robotCurrent.hr_version.filename = texturePathHighRes
+robotCurrent.hr_version.line_length = textureLineLength
+robotCurrent.hr_version.width = textureWidthHighRes
+robotCurrent.hr_version.height = textureHeightHighRes
+robotCurrent.hr_version.y = 0
 
 -- In motion with cargo
 if not constructionBot then
 
-data.raw[name][name].in_motion_with_cargo.filename = texturePath
-data.raw[name][name].in_motion_with_cargo.line_length = textureLineLength
-data.raw[name][name].in_motion_with_cargo.width = textureWidth
-data.raw[name][name].in_motion_with_cargo.height = textureHeight
-data.raw[name][name].in_motion_with_cargo.y = 0
+robotCurrent = robot.in_motion_with_cargo
+
+robotCurrent.filename = texturePath
+robotCurrent.line_length = textureLineLength
+robotCurrent.width = textureWidth
+robotCurrent.height = textureHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].in_motion_with_cargo.hr_version.filename = texturePathHighRes
-data.raw[name][name].in_motion_with_cargo.hr_version.line_length = textureLineLength
-data.raw[name][name].in_motion_with_cargo.hr_version.width = textureWidthHighRes
-data.raw[name][name].in_motion_with_cargo.hr_version.height = textureHeightHighRes
-data.raw[name][name].in_motion_with_cargo.hr_version.y = 0
+robotCurrent.hr_version.filename = texturePathHighRes
+robotCurrent.hr_version.line_length = textureLineLength
+robotCurrent.hr_version.width = textureWidthHighRes
+robotCurrent.hr_version.height = textureHeightHighRes
+robotCurrent.hr_version.y = 0
 end
 -- Shadows
 
 -- Shadow idle
+robotCurrent = robot.shadow_idle
 
-data.raw[name][name].shadow_idle.filename = shadowPath
-data.raw[name][name].shadow_idle.line_length = shadowLineLength
-data.raw[name][name].shadow_idle.width = shadowWidth
-data.raw[name][name].shadow_idle.height = shadowHeight
-data.raw[name][name].shadow_idle.y = 0
+robotCurrent.filename = shadowPath
+robotCurrent.line_length = shadowLineLength
+robotCurrent.width = shadowWidth
+robotCurrent.height = shadowHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].shadow_idle.hr_version.filename = shadowPathHighRes
-data.raw[name][name].shadow_idle.hr_version.line_length = shadowLineLength
-data.raw[name][name].shadow_idle.hr_version.width = shadowWidthHighRes
-data.raw[name][name].shadow_idle.hr_version.height = shadowHeightHighRes
-data.raw[name][name].shadow_idle.hr_version.y = 0
+robotCurrent.hr_version.filename = shadowPathHighRes
+robotCurrent.hr_version.line_length = shadowLineLength
+robotCurrent.hr_version.width = shadowWidthHighRes
+robotCurrent.hr_version.height = shadowHeightHighRes
+robotCurrent.hr_version.y = 0
 
 -- Shadow idle with cargo
 if not constructionBot then
+robotCurrent = robot.shadow_idle_with_cargo
 
-data.raw[name][name].shadow_idle_with_cargo.filename = shadowPath
-data.raw[name][name].shadow_idle_with_cargo.line_length = shadowLineLength
-data.raw[name][name].shadow_idle_with_cargo.width = shadowWidth
-data.raw[name][name].shadow_idle_with_cargo.height = shadowHeight
-data.raw[name][name].shadow_idle_with_cargo.y = 0
+robotCurrent.filename = shadowPath
+robotCurrent.line_length = shadowLineLength
+robotCurrent.width = shadowWidth
+robotCurrent.height = shadowHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].shadow_idle_with_cargo.hr_version.filename = shadowPathHighRes
-data.raw[name][name].shadow_idle_with_cargo.hr_version.line_length = shadowLineLength
-data.raw[name][name].shadow_idle_with_cargo.hr_version.width = shadowWidthHighRes
-data.raw[name][name].shadow_idle_with_cargo.hr_version.height = shadowHeightHighRes
-data.raw[name][name].shadow_idle_with_cargo.hr_version.y = 0
+robotCurrent.hr_version.filename = shadowPathHighRes
+robotCurrent.hr_version.line_length = shadowLineLength
+robotCurrent.hr_version.width = shadowWidthHighRes
+robotCurrent.hr_version.height = shadowHeightHighRes
+robotCurrent.hr_version.y = 0
 -- Shadow in motion with cargo
+robotCurrent = robot.shadow_in_motion_with_cargo
 
-data.raw[name][name].shadow_in_motion_with_cargo.filename = shadowPath
-data.raw[name][name].shadow_in_motion_with_cargo.line_length = shadowLineLength
-data.raw[name][name].shadow_in_motion_with_cargo.width = shadowWidth
-data.raw[name][name].shadow_in_motion_with_cargo.height = shadowHeight
-data.raw[name][name].shadow_in_motion_with_cargo.y = 0
+robotCurrent.filename = shadowPath
+robotCurrent.line_length = shadowLineLength
+robotCurrent.width = shadowWidth
+robotCurrent.height = shadowHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].shadow_in_motion_with_cargo.hr_version.filename = shadowPathHighRes
-data.raw[name][name].shadow_in_motion_with_cargo.hr_version.line_length = shadowLineLength
-data.raw[name][name].shadow_in_motion_with_cargo.hr_version.width = shadowWidthHighRes
-data.raw[name][name].shadow_in_motion_with_cargo.hr_version.height = shadowHeightHighRes
-data.raw[name][name].shadow_in_motion_with_cargo.hr_version.y = 0
+robotCurrent.hr_version.filename = shadowPathHighRes
+robotCurrent.hr_version.line_length = shadowLineLength
+robotCurrent.hr_version.width = shadowWidthHighRes
+robotCurrent.hr_version.height = shadowHeightHighRes
+robotCurrent.hr_version.y = 0
 end
 -- shadow in motion
-data.raw[name][name].shadow_in_motion.filename = shadowPath
-data.raw[name][name].shadow_in_motion.line_length = shadowLineLength
-data.raw[name][name].shadow_in_motion.width = shadowWidth
-data.raw[name][name].shadow_in_motion.height = shadowHeight
-data.raw[name][name].shadow_in_motion.y = 0
+
+robotCurrent = robot.shadow_in_motion
+
+robotCurrent.filename = shadowPath
+robotCurrent.line_length = shadowLineLength
+robotCurrent.width = shadowWidth
+robotCurrent.height = shadowHeight
+robotCurrent.y = 0
 -- high resolution
-data.raw[name][name].shadow_in_motion.hr_version.filename = shadowPathHighRes
-data.raw[name][name].shadow_in_motion.hr_version.line_length = shadowLineLength
-data.raw[name][name].shadow_in_motion.hr_version.width = shadowWidthHighRes
-data.raw[name][name].shadow_in_motion.hr_version.height = shadowHeightHighRes
-data.raw[name][name].shadow_in_motion.hr_version.y = 0
+robotCurrent.hr_version.filename = shadowPathHighRes
+robotCurrent.hr_version.line_length = shadowLineLength
+robotCurrent.hr_version.width = shadowWidthHighRes
+robotCurrent.hr_version.height = shadowHeightHighRes
+robotCurrent.hr_version.y = 0
