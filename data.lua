@@ -15,13 +15,13 @@ textureLineLength = 4
 textureWidthHighRes  = 80
 textureHeightHighRes = 74
 textureWidth  = 41
-textureHeigh = 38
+textureHeight = 38
 
 shadowLineLength = 3
 shadowWidthHighRes  = 115
 shadowHeightHighRes = 43
 shadowWidth  = 58
-shadowHeigh = 22
+shadowHeight = 22
 
 
 constructionBot = false
@@ -99,7 +99,7 @@ end
 data.raw[name][name].shadow_idle.filename = shadowPath
 data.raw[name][name].shadow_idle.line_length = shadowLineLength
 data.raw[name][name].shadow_idle.width = shadowWidth
-data.raw[name][name].shadow_idle.height = shadowHeigh
+data.raw[name][name].shadow_idle.height = shadowHeight
 data.raw[name][name].shadow_idle.y = 0
 -- high resolution
 data.raw[name][name].shadow_idle.hr_version.filename = shadowPathHighRes
@@ -114,7 +114,7 @@ if not constructionBot then
 data.raw[name][name].shadow_idle_with_cargo.filename = shadowPath
 data.raw[name][name].shadow_idle_with_cargo.line_length = shadowLineLength
 data.raw[name][name].shadow_idle_with_cargo.width = shadowWidth
-data.raw[name][name].shadow_idle_with_cargo.height = shadowHeigh
+data.raw[name][name].shadow_idle_with_cargo.height = shadowHeight
 data.raw[name][name].shadow_idle_with_cargo.y = 0
 -- high resolution
 data.raw[name][name].shadow_idle_with_cargo.hr_version.filename = shadowPathHighRes
@@ -127,7 +127,7 @@ data.raw[name][name].shadow_idle_with_cargo.hr_version.y = 0
 data.raw[name][name].shadow_in_motion_with_cargo.filename = shadowPath
 data.raw[name][name].shadow_in_motion_with_cargo.line_length = shadowLineLength
 data.raw[name][name].shadow_in_motion_with_cargo.width = shadowWidth
-data.raw[name][name].shadow_in_motion_with_cargo.height = shadowHeigh
+data.raw[name][name].shadow_in_motion_with_cargo.height = shadowHeight
 data.raw[name][name].shadow_in_motion_with_cargo.y = 0
 -- high resolution
 data.raw[name][name].shadow_in_motion_with_cargo.hr_version.filename = shadowPathHighRes
@@ -140,7 +140,7 @@ end
 data.raw[name][name].shadow_in_motion.filename = shadowPath
 data.raw[name][name].shadow_in_motion.line_length = shadowLineLength
 data.raw[name][name].shadow_in_motion.width = shadowWidth
-data.raw[name][name].shadow_in_motion.height = shadowHeigh
+data.raw[name][name].shadow_in_motion.height = shadowHeight
 data.raw[name][name].shadow_in_motion.y = 0
 -- high resolution
 data.raw[name][name].shadow_in_motion.hr_version.filename = shadowPathHighRes
