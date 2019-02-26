@@ -1,6 +1,6 @@
 -- Ugly mess of replacing every data.raw value (I never modded a game before and this is my first time with lua)
 -- TODO : make it cleaner (like Waitex_Full)
---TODO : Setting to toggle
+-- TODO : Setting to toggle
 -- Maybe make different sprites for cargo and no cargo like base game...
 -- Used 3d model from https://free3d.com/3d-model/companion-cubes-portal-8274.html to generate images in blender
 
