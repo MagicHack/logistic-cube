@@ -34,8 +34,11 @@ robot = data.raw[name][name]
 -- Icon
 
 robot.icon = iconPath
--- ??
+robot.icon_size = 32
+
 data.raw.item[name].icon = iconPath
+data.raw.item[name].icon_size = 32
+
 -- Idle
 robotCurrent = robot.idle
 
